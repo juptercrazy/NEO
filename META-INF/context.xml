@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context reloadable="true">
+<Resource
+    name="jdbc/neo"
+    auth="Container"
+    type="javax.sql.DataSource"
+    maxTotal="8"
+    maxIdle="30"
+    maxWaitMillis="10000"
+    driverClassName="org.postgresql.Driver"
+    validationQuery="SELECT 'OK'"
+    testWhileIdle="true"
+    numTestPerEvictionRun="5"
+    timeBetweenEvictionRumMillis="5000"
+    url="jdbc:postgresql://127.0.0.1:5432/neo?autoReconnect=true"
+    username="postgres"
+    password="neo"
+    />
+</Context>

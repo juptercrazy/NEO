@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+	<title>login</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+	<link rel="SHORTCUT ICON" href="http://www.ibm.com/favicon.ico" />
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</h:head>
+<h:body style="padding:20px">
+	<div class="container text-center" width="200">
+	<h:panelGroup rendered="#{!empty param.login_error}">
+		<span style="font-color:red"> Erro ao efetuar o login.</span><br/>
+		Motivo: #{SPRING_SECURITY_LAST_EXCEPTION.message}
+	</h:panelGroup>
+		<form id="login" method="post" action="#{request.contextPath}/j_spring_security_check">
+			<p:messages id="msg" closable="true" />
+			<h3>NEO Login</h3>
+				<div class="form-group">
+				<label>nome</label> <input id="nome" type="text" name="j_username"
+					class="form-control" placeholder="Entre com o seu cpf"
+					jsf:value="#{loginBean.usuario.nome}" required="true" requiredMessage="Digite o seu CPF, ele é o seu login" />
+			</div>
+			<div class="form-group">
+				<label>CPF</label> <input id="cpf" type="password" name="j_password"
+					class="form-control" placeholder="Entre com o seu cpf"
+					jsf:value="#{loginBean.usuario.cpf}" required="true" requiredMessage="Digite o seu CPF, ele é o seu login" />
+			</div>
+ 			
+ 			<input type="submit" value="Entrar"/>
+ 			<div class="form-group">
+				<input type="checkbox" name="_spring_security_remember_me"/>
+			</div>
+		</form>
+	</div>
+	<script>
+		document.getElementById("login").j_password.value = "#{SPRING_SECURITY_LAST_USERNAME}";
+	</script>
+	<div class="container text-center">
+	<h:form>
+	<h:commandLink value ="Criar nova conta" action="#{loginBean.link_criar_usuario}"/>
+	</h:form>
+	</div>
+</h:body>
+</html>

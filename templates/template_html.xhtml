@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title><ui:insert name="title">Default Title</ui:insert></title>
+	 <!-- Tell the browser to be responsive to screen width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="http://localhost:8080/NEO/plugins/font-awesome/css/font-awesome.min.css"/>
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"/>
+  <!-- Theme style -->
+  <link rel="stylesheet" href="http://localhost:8080/NEO/dist/css/adminlte.min.css"/>
+  <!-- iCheck -->
+  <link rel="stylesheet" href="http://localhost:8080/NEO/plugins/iCheck/flat/blue.css"/>
+  <!-- Morris chart -->
+  <link rel="stylesheet" href="http://localhost:8080/NEO/plugins/morris/morris.css"/>
+  <!-- jvectormap -->
+  <link rel="stylesheet" href="http://localhost:8080/NEO./plugins/jvectormap/jquery-jvectormap-1.2.2.css"/>
+  <!-- Date Picker -->
+  <link rel="stylesheet" href="http://localhost:8080/NEO./plugins/datepicker/datepicker3.css"/>
+  <!-- Daterange picker -->
+  <link rel="stylesheet" href="http://localhost:8080/NEO/plugins/daterangepicker/daterangepicker-bs3.css"/>
+  <!-- bootstrap wysihtml5 - text editor -->
+  <link rel="stylesheet" href="http://localhost:8080/NEO./plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css"/>
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet"/>
+    <!-- fullCalendar 2.2.5-->
+  <link rel="stylesheet" href="../plugins/fullcalendar/fullcalendar.min.css"/>
+  <link rel="stylesheet" href="../plugins/fullcalendar/fullcalendar.print.css" media="print"/>
+  <!-- Theme style -->
+</h:head>
+
+<h:body class="hold-transition sidebar-mini">
+<!--  id="myPage" data-spy="scroll" data-target=".navbar"	data-offset="60" -->
+	<div>
+		<ui:insert name="nav_bar">
+		</ui:insert>
+	</div>
+
+	<div>
+		<ui:insert name="aside">
+		</ui:insert>
+	</div>
+	
+	<div>
+		<ui:insert name="container">
+		</ui:insert>
+	</div>
+	<div>
+		<ui:insert name="footer">
+		</ui:insert>
+	</div>
+	
+</h:body>
+</html>

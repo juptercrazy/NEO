@@ -1,0 +1,93 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+
+	<div id="tela-0102"
+		class="full-screen aberto container-fluid text-center">
+
+		<div class="row">
+			<div class="col-sm-3"></div>
+			<div class="col-sm-6">
+
+				<h:form id="userform">
+				<p:panel header="Cadastrar Nova Agenda">
+					<!-- h:messages /> -->
+					<p:messages id="msg" closable="true" />
+					
+						<h:panelGrid columns="4" style="margin-bottom:10px"	cellpadding="5">
+							<h:outputLabel for="diasdasemana" value="Dias da semana: " />
+							<p:selectManyButton id="diasdasemana" value="#{agendaBean.diasDaSemana}" converter="javax.faces.Integer">
+								<f:selectItem itemLabel="Seg" itemValue="2" />
+								<f:selectItem itemLabel="Ter" itemValue="3" />
+								<f:selectItem itemLabel="Qua" itemValue="4" />
+								<f:selectItem itemLabel="Qui" itemValue="5" />
+								<f:selectItem itemLabel="Sex" itemValue="6" />
+								<f:selectItem itemLabel="Sab" itemValue="7" />
+							</p:selectManyButton>
+							<h:outputText/>
+							<h:outputText/>
+
+						<h:outputLabel value="Tipo de Aula" />
+						<h:selectOneMenu id="tipoAula"
+							value="#{agendaBean.agenda.tipoServico}" effect="fold" converter="tipoServicoConverter">
+							<f:selectItem itemLabel="Selecione um tipo de Aula" />
+							<f:selectItems value="#{listBean.tiposServicos}" var="tipo"
+								itemLabel="#{tipo.descricao}" itemValue="#{tipo}" />
+						</h:selectOneMenu>
+						<h:outputText/>
+						<h:outputText/>
+
+						<h:outputLabel value="Modelo de Aula" />
+						<h:selectOneMenu id="modeloaula" value="#{agendaBean.modeloAula}"
+							effect="fold"
+							converter="modeloAulaConverter">
+							<f:selectItem itemLabel="Selecione um tipo de Aula" />
+							<f:selectItems value="#{listBean.modelosAula}" var="modelo"
+								itemLabel="#{modelo.nome}" itemValue="#{modelo}" />
+						</h:selectOneMenu>
+						<h:outputText/>
+						<h:outputText/>
+
+						<h:outputLabel value="Professor" />
+						<h:selectOneMenu id="role_professor"
+							value="#{agendaBean.agenda.professor}" 
+								effect="fold"
+								converter="usuarioConverter">
+							<f:selectItem itemLabel="Selecione um tipo de Aula" />
+							<f:selectItems value="#{listBean.professores}" var="professor"
+								itemLabel="#{professor.nome}" itemValue="#{professor}" />
+						</h:selectOneMenu>
+						<h:outputText/>
+						<h:outputText/>
+
+						<h:outputLabel for="horainicio" value="Horário de Inicio" />
+						<h:inputText id="horainicio"
+							value="#{agendaBean.agenda.horaInicio}" converter="localTimeFacesConverter">
+						</h:inputText>
+						<h:outputText/>
+						<h:outputText/>
+
+						<h:outputLabel for="horafim" value="Horário Fim" />
+						<h:inputText id="horafim" value="#{agendaBean.agenda.horaFim}" converter="localTimeFacesConverter">
+						</h:inputText>
+						<h:outputText/>
+						<h:outputText/>
+
+						<p:outputLabel for="inicioVigencia" value="Inicio Vigência" />
+						<p:calendar id="inicioVigencia" value="#{agendaBean.agenda.inicioVigencia}" converter="dateTimeFacesConverter">
+						</p:calendar>
+						<p:message for="inicioVigencia" />
+						<h:outputText/>
+
+						</h:panelGrid>
+						 <p:commandButton value="Criar Agenda" actionListener="#{agendaBean.criarAgenda}" ajax="false" icon="ui-icon-check" validateClient="true" />
+					</p:panel>
+				</h:form>
+			</div>
+			<div class="col-sm-3"></div>
+		</div>
+	</div>
+</ui:composition>

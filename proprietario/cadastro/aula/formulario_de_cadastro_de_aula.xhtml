@@ -1,0 +1,48 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:jsf="http://xmlns.jcp.org/jsf" xmlns:p="http://primefaces.org/ui"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+
+	<div id="tela-0102"
+		class="full-screen aberto container-fluid text-center">
+
+		<div class="row">
+			<div class="col-sm-3"></div>
+			<div class="col-sm-6">
+
+				<h:form id="funcionarioform">
+
+					<p:messages id="msg" closable="true" />
+					<h3>Cadastro de Aula</h3>
+
+					<div class="form-group">
+						<label for="nome">Nome</label>
+						<h:inputText id="nome" class="form-control"
+							pt:placeholder="Entre com um nome para esta Aula"
+							value="#{aulaBean.aula.nome}" required="true" />
+					</div>
+					
+					<div class="form-group">
+						<label for="quantidade_alunos">Quantidade de alunos</label>
+						<h:inputText id="quantidade_alunos" class="form-control"
+							pt:placeholder="Entre com a quantidade de alunos que esta Aula comporta"
+							value="#{aulaBean.aula.maxAlunosAula}" required="true" />
+					</div>
+					<div class="form-group">
+						<label for="duracao">Duração</label>
+						<h:inputText id="duracao" class="form-control"
+							pt:placeholder="Entre com o tempo em minutos de duração desta aula"
+							value="#{aulaBean.aula.duracao}" required="true" />
+					</div>
+					<h:commandButton id="botao" class="btn btn-default btn-primary"
+					action="#{aulaBean.criarAula}"
+					value="Cadastrar">
+				</h:commandButton>
+				</h:form>
+			</div>
+			<div class="col-sm-3"></div>
+		</div>
+	</div>
+</ui:composition>

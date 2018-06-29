@@ -1,0 +1,99 @@
+.jumbotron {
+	background-color: #659905; /* azul neo 2969eb */
+	color: #ffffff;
+	padding: 100px 25px;
+}
+
+.container-fluid {
+	padding: 60px 50px;
+}
+
+.bg-grey {
+	background-color: #f6f6f6;
+}
+
+.logo {
+	font-size: 200px;
+	color: #eb29bb;
+	font-size: 200px;
+}
+
+.logo-small {
+	color: #f4511e;
+	font-size: 50px;
+}
+
+@media screen and (max-width: 768px) {
+	.col-sm-4 {
+		text-align: center;
+		margin: 25px 0;
+	}
+}
+
+.navbar {
+	margin-bottom: 0;
+	background-color: #205081;
+	z-index: 9999;
+	border: 0;
+	font-size: 12px !important;
+	line-height: 1.42857143 !important;
+	letter-spacing: 4px;
+	border-radius: 0;
+}
+
+.navbar li a, .navbar .navbar-brand {
+	color: #fff !important;
+}
+
+.navbar-nav li a:hover, .navbar-nav li.active a {
+	color: #2969eb !important;
+	background-color: #fff !important;
+}
+
+.navbar-default .navbar-toggle {
+	border-color: transparent;
+	color: #fff !important;
+}
+
+footer .glyphicon {
+	font-size: 20px;
+	margin-bottom: 20px;
+	color: #f4511e;
+}
+
+.btn-baixe {
+	float: left;
+	font-family: 'Gilroy', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size: 12px;
+	text-transform: uppercase;
+	line-height: 40px;
+	color: #fff;
+	background: #ff9900;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	padding-left: 20px !important;
+	padding-right: 20px !important;
+	height: 40px;
+	margin-left: 10px;
+}
+
+.btn-baixe:hover {
+	color: #3366cc !important;
+	background: #fff !important;
+}
+
+  .bg-azul{
+	  background: #205081; 
+	  padding: 100px 25px
+	  .full-screen{
+    width: 100%;
+    min-height: 100vh;
+}
+
+.label-cadastro {
+	 background: #0000FF;
+	color: #f6f6f6;
+	<!-- 205081 -->
+}
+	  

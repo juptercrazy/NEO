@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+<session-factory>
+	<!--property name="connection.driver_class">org.postgresql.Driver</property>
+	<property name="connection.url">jdbc:postgresql://127.0.0.1:5432/neo</property>
+	<property name="connection.username">postgres</property>
+	<property name="connection.password">neo</property-->
+	
+	<property name="connection.datasource">java:/comp/env/jdbc/neo</property>
+
+	<!-- JDBC connection pool (use the build-in) -->
+	<property name="connection.pool_size">1</property>
+	<!-- SQL dialect -->
+	<property name="dialect">org.hibernate.dialect.PostgreSQLDialect
+	</property>
+	<property name="cache.provider_class">org.hibernate.cache.HashtableCacheProvider
+	</property>
+	<property name="transaction.factory_class">org.hibernate.transaction.JDBCTransactionFactory
+	</property>
+	<!-- 	<property name="hibernate.hbm2ddl.auto"> create-drop</property> -->
+	
+	<property name="hibernate.hbm2ddl.auto">update</property>
+	<!-- thread is the short name for org.hibernate.context.ThreadLocalSessionContext -->
+	<property name="current_session_context_class">thread</property>
+
+	<!-- Set "true" to show SQL statements -->
+	<property name="hibernate.show_sql">true</property>
+	
+	
+
+	<!-- mapping class using annotation -->
+	<mapping class="entity.Usuario"></mapping>
+	<mapping class="entity.Empresa"></mapping>
+	<mapping class="entity.Endereco"></mapping>
+	<mapping class="entity.StatusEmpresa"></mapping>
+	<mapping class="entity.Role"></mapping>
+	<mapping class="entity.TipoEmpresa"></mapping>
+	<mapping class="entity.EmpresaUsuario"></mapping>
+	<mapping class="entity.TipoServico"></mapping>
+	<!-- mapping class="entity.Agenda"></mapping -->
+	<mapping class="entity.Aula"></mapping>
+	<mapping class="entity.ModeloAula"></mapping>
+	<mapping class="entity.PropriedadesAluno"></mapping>
+	
+	<!-- 
+	<listener class="org.hibernate.envers.event.AuditEventListener" 
+		type="post-insert"/>
+		
+		<listener class="org.hibernate.envers.event.AuditEventListener" 
+		type="post-update"/>
+		
+		<listener class="org.hibernate.envers.event.AuditEventListener" 
+		type="post-delete"/>
+		
+		<listener class="org.hibernate.envers.event.AuditEventListener" 
+		type="post-collection-recreate"/>
+		
+		<listener class="org.hibernate.envers.event.AuditEventListener" 
+		type="post-collection-remove"/>
+		
+		<listener class="org.hibernate.envers.event.AuditEventListener" 
+		type="post-collection-update"/>
+		 -->
+</session-factory>
+
+</hibernate-configuration>

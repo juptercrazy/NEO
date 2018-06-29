@@ -1,0 +1,48 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:jsf="http://xmlns.jcp.org/jsf" xmlns:p="http://primefaces.org/ui"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+
+	<div id="tela-01"
+		class="jumbotron tela-01 full-screen bg-azul aberto container-fluid text-center">
+		<div>
+			<h:form id="userform">
+
+				<p:messages id="msg" closable="true" />
+				<h3>Dados da empresa</h3>
+
+				<div class="form-group">
+					<h:outputText value="nome" style="form-group"/>
+					<h:inputText id="nome" class="form-control"
+						pt:placeholder="Entre com o seu nome da empresa"
+						value="#{usuarioBean.empresa.nome}" required="true" />
+				</div>
+				<div class="form-group">
+					<h:outputText value="CNPJ"/>
+					<p:inputMask id="cnpj" styleClass="form-control"
+						pt:placeholder="Entre com o CNPJ da empresa"
+						value="#{usuarioBean.empresa.cnpj}" required="true"
+						converter="converter.CnpjConverter">
+					</p:inputMask>
+				</div>
+				<div class="form-group">
+					<h:outputText value="Tipo de Empresa"/><br/>
+					<h:selectOneMenu id="tipoEmpresa"
+						value="#{usuarioBean.empresa.tipoEmpresa}"
+						effect="fold">
+						<f:selectItem itemLabel="Selecione uma empresa" />
+						<f:selectItems value="#{listBean.tiposEmpresa}"
+							var="tipo" itemLabel="#{tipo.descricao}"
+							itemValue="#{tipo}" />
+					</h:selectOneMenu>
+				</div>
+				<h:commandButton id="botao" class="btn btn-default btn-primary"
+					action="#{usuarioBean.criarUsuarioProprietario}"
+					value="Cadastrar">
+				</h:commandButton>
+			</h:form>
+		</div>
+	</div>
+</ui:composition>

@@ -1,0 +1,55 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+	
+	<nav class="navbar navbar-default navbar-fixed-top">
+
+		<h:form>
+			<div class="head-wrap">
+				<div id="logo">
+					logo
+					<!-- <img class="logo" src="../_imagens/logo-wplex-co.png" /> -->
+				</div>
+				<div class="header">
+
+					<div class="menu-button"></div>
+					<div id="barra">
+						<ul class="flexnav" style="z-index: 100">
+							<li style="z-index: 100"><h:link
+											outcome="/proprietario/cadastro/agenda/template_cadastrar_agenda" >AGENDA</h:link></li>
+							<li style="z-index: 100"><a href="#">CADASTROS</a>
+								<ul style="display: none;">
+									<li style="z-index: 100"><h:link
+											outcome="#{usuarioBean.novoFuncionario}" >Funcionário</h:link></li>
+									<li style="z-index: 100"><h:link
+										outcome="#{usuarioBean.novoAluno}" >Aluno</h:link></li>
+									<li style="z-index: 100"><h:link
+											outcome="/proprietario/cadastro/servico/template_cadastrar_servico" >Serviços</h:link></li>
+									<li style="z-index: 100"><h:link
+											outcome="/proprietario/cadastro/modeloaula/template_cadastrar_modelo_de_aula" >Modelo de Aula</h:link></li>
+									<!-- 
+								<li style="z-index: 100"><a href="#">Menu 2 - 4</a></li>
+								<li style="z-index: 100"><a href="#">Menu 2 - 5</a>
+
+									<ul style="display: none;">
+										<li style="z-index: 100"><a href="#">Menu 2 - 5 - 1</a></li>
+										<li style="z-index: 100"><a href="#">Menu 2 - 5 - 2</a></li>
+										<li style="z-index: 100"><a href="#">Menu 2 - 5 - 3</a></li>
+
+									</ul></li>
+ -->
+								</ul></li>
+								<li style="z-index: 100"><h:link
+											outcome="/proprietario/cadastro/agenda/teste_primefaces2" >AGENDA</h:link></li>
+							<li style="z-index: 100; float:right"><div>#{contextoBean.usuarioLogado.nome}</div></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</h:form>
+	</nav>
+</ui:composition>

@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:ui="http://java.sun.com/jsf/facelets">
+
+
+<ui:composition template="/templates/template_html.xhtml">
+    <ui:define name="nav_bar">
+        <ui:include src="/proprietario/navbar.xhtml"/>
+    </ui:define>
+    
+    <ui:define name="aside">
+         <ui:include src="/proprietario/menu_funcionario.xhtml"/>
+    </ui:define>
+      
+   <ui:define name="container">
+         <ui:include src="/proprietario/cadastro/funcionario/formulario_de_cadastro_de_funcionario.xhtml"/>
+    </ui:define>    
+    <ui:define name="footer">
+         <ui:include src="/footer.xhtml"/>
+    </ui:define>
+    <ui:define name="title">        
+            N4U - Cadastro de Funcionário 
+    </ui:define>
+</ui:composition>
+</html>
