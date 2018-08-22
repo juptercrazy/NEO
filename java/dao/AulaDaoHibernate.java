@@ -54,6 +54,14 @@ public class AulaDaoHibernate extends Dao implements AulaDao {
 		return (List<Aula>) criteria.list();
 	}
 
-
+	@Override
+	public List<Aula> buscarAulasParaOPeriodo(DateTime inicioPeriodo, DateTime fimPeriodo, Empresa empresa) throws Exception {
+		Criteria criteria = Dao.getSession().createCriteria(Aula.class);
+		criteria.add(Restrictions.eq("empresa", empresa));
+		criteria.add(Restrictions.ge("inicioVigencia", inicioPeriodo));
+		criteria.add(Restrictions.or(Restrictions.le("fimVigencia", fimPeriodo), Restrictions.isNull("fimVigencia")));
+		
+		return (List<Aula>) criteria.list();
+	}
 
 }

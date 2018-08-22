@@ -1,6 +1,7 @@
 package dao;
 
 import interfaceDao.AgendaDao;
+import interfaceDao.AlunoDao;
 import interfaceDao.AulaDao;
 import interfaceDao.EmpresaUsuarioDao;
 import interfaceDao.ModeloAulaDao;
@@ -63,4 +64,11 @@ public class DaoFactory {
 		
 		return modeloAulaDao;
 	}
+	
+	public static AlunoDao criarAlunoDao() {
+		AlunoDaoHibernate alunoDao = new AlunoDaoHibernate();
+		
+		return alunoDao;
+	}
+	
 }

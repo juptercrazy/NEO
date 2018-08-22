@@ -68,12 +68,13 @@ public class Usuario implements Serializable {
 	private List<TipoServico> tipoServicos = new ArrayList<TipoServico>();
 	
 	@OneToOne(cascade=CascadeType.ALL)
-	private PropriedadesAluno propriedades;
+	private PropriedadesAluno propriedadesAluno;
 	
 	@OneToMany(mappedBy="professor", fetch = FetchType.LAZY, cascade=CascadeType.ALL)
 	private List<Aula> aula = new ArrayList<Aula>();
 
 	public Usuario(){
+		 propriedadesAluno = new PropriedadesAluno();
 	}
 
 	public Usuario(String novoNome, String novaSenha, String novoEmail, String novoCPF){
@@ -224,12 +225,13 @@ public class Usuario implements Serializable {
 		this.getTipoServicos().add(tipoServico);
 	}
 
-	public PropriedadesAluno getPropriedades() {
-		return propriedades;
+
+	public PropriedadesAluno getPropriedadesAluno() {
+		return propriedadesAluno;
 	}
 
-	public void setPropriedades(PropriedadesAluno propriedades) {
-		this.propriedades = propriedades;
+	public void setPropriedadesAluno(PropriedadesAluno propriedadesAluno) {
+		this.propriedadesAluno = propriedadesAluno;
 	}
 
 	public List<Aula> getAula() {

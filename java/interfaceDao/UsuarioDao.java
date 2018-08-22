@@ -23,4 +23,6 @@ public interface UsuarioDao {
 	public List<Usuario> obterUsuariosDeEmpresaPorPapel(Empresa empresa) throws Exception;
 
 	public Usuario buscarPorID(Long id) throws Exception;
+	
+	public List<Usuario> obterAlunosPorEmpresa(Empresa empresa) throws Exception;
 }

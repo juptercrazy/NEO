@@ -88,6 +88,17 @@ public class UsuarioDaoHibernate extends Dao implements UsuarioDao {
 		
 		return (List<Usuario>) criteria.list();
 	}
+	
+	@Override
+	public List<Usuario> obterAlunosPorEmpresa(Empresa empresa) {
+		Criteria criteria = Dao.getSession().createCriteria(Usuario.class);
+		criteria.createAlias("roles", "rolesAlias");
+		criteria.add(Restrictions.eq("rolesAlias.descricao", PapeisUsuarios.ROLE_ALUNO.name()));
+		criteria.createAlias("empresaUsuarios", "empUsersAlias");
+		criteria.add(Restrictions.eq("empUsersAlias.empresa", empresa));
+		
+		return (List<Usuario>) criteria.list();
+	}
 
 	@Override
 	public Usuario buscarPorID(Long id) throws Exception {

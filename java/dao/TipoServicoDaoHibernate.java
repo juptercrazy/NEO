@@ -17,11 +17,11 @@ public class TipoServicoDaoHibernate implements TipoServicoDao {
 	private DaoGeneric<TipoServico> servicoDaoGeneric = new DaoGeneric<TipoServico>();
 	
 	@Override
-	public void criarServiço(TipoServico servico) throws Exception {
+	public void criarServico(TipoServico servico) throws Exception {
 		try {
 			servicoDaoGeneric.salvar(servico);
 		} catch (HibernateException e) {
-			throw new Exception("Erro ao criar Tipo de serviço para a empresa " + servico.getEmpresa().getNome() + e.getMessage(), e);
+			throw new Exception("Erro ao criar Tipo de serviï¿½o para a empresa " + servico.getEmpresa().getNome() + e.getMessage(), e);
 		}
 	}
 
@@ -54,7 +54,7 @@ public class TipoServicoDaoHibernate implements TipoServicoDao {
 		try {
 			return (TipoServico) servicoDaoGeneric.getObjetoPorID(TipoServico.class, id);
 		} catch (HibernateException e) {
-			throw new Exception("Erro ao criar Tipo de serviço para a empresa " +  e.getMessage(), e);
+			throw new Exception("Erro ao criar Tipo de serviï¿½o para a empresa " +  e.getMessage(), e);
 		}
 	}
 

@@ -30,6 +30,10 @@ public class TipoServico implements Serializable {
 	public TipoServico() {
 	}
 	
+	public TipoServico(String descricao) {
+		setDescricao(descricao);
+	}
+	
 	public Long getId() {
 		return id;
 	}

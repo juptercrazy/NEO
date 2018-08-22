@@ -18,9 +18,9 @@ public class TipoServicoNegocio {
 
 	public void salvarServico(TipoServico servico) throws Exception {
 
-		System.out.println("Tipo de serviço - Empresa");
+		System.out.println("Tipo de serviï¿½o - Empresa");
 		if (existeServico(servico)) {
-			servicoDao.criarServiço(servico);
+			servicoDao.criarServico(servico);
 		}
 	}
 

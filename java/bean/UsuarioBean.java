@@ -11,7 +11,6 @@ import entity.Empresa;
 import entity.TipoServico;
 import entity.Usuario;
 import negocio.UsuarioNegocio;
-import util.ContextoUtil;
 
 @ManagedBean
 @SessionScoped
@@ -25,12 +24,17 @@ public class UsuarioBean {
 	private Empresa empresa = new Empresa();
 
 	private TipoServico tipoServico = new TipoServico();
+	
+	private Boolean escolherhorarioaula;
+	
+	private Boolean weekends = Boolean.FALSE; 
 
-	private String url = ContextoUtil.getContextoBean().getUrl();
+//	private String url = ContextoUtil.getContextoBean().getUrl();
+	private final String url = "http://localhost:8080/NEO";
 
 	public String novo() {
 		setNovoUsuario();
-		StringBuilder endereco = new StringBuilder().append(url)
+		StringBuilder endereco = new StringBuilder()//.append(url)
 				.append("/publico/cadastro/proprietario/cadastrar_novo_usuario_template.xhtml");
 
 		return endereco.toString();
@@ -95,13 +99,19 @@ public class UsuarioBean {
 		try {
 
 			usuarioRN.criarUsuarioAluno(this.usuario);
+			
+			this.usuario = new Usuario();
 
-			return "/proprietario/template_home.xhtml";
+//			return "/proprietario/template_home.xhtml";
 
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
 		return "";
+	}
+	
+	public void abrirAulas() {
+		escolherhorarioaula = true;
 	}
 
 	public Usuario getUsuario() {
@@ -134,9 +144,25 @@ public class UsuarioBean {
 		if (email.indexOf('@') == -1) {
 			((UIInput) toValidate).setValid(false);
 
-			FacesMessage message = new FacesMessage("Email inválido");
+			FacesMessage message = new FacesMessage("Email invï¿½lido");
 			context.addMessage(toValidate.getClientId(context), message);
 		}
+	}
+
+	public Boolean getWeekends() {
+		return weekends;
+	}
+
+	public void setWeekends(Boolean weekends) {
+		this.weekends = weekends;
+	}
+
+	public Boolean getEscolherhorarioaula() {
+		return escolherhorarioaula;
+	}
+
+	public void setEscolherhorarioaula(Boolean escolherhorarioaula) {
+		this.escolherhorarioaula = escolherhorarioaula;
 	}
 
 }

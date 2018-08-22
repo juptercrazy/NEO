@@ -23,7 +23,7 @@ public class ModeloAulaConverter implements Converter {
 					
 		        	 modelo = negocio.obterServicoPorID(id); 
 				} catch (Exception e) {
-					// TODO: handle exception
+					throw new ConverterException("Não foi possível encontrar o Modelo de Aula com ID " + value + ", " + e.getMessage());
 				}
 		         return modelo;
 		    }

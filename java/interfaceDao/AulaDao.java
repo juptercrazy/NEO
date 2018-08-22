@@ -19,4 +19,6 @@ public interface AulaDao {
 	public List<Aula> buscarAulaEmpresadia(Empresa empresa, Date dia);
 	
 	public List<Aula> buscarAulasAbertasParaOPeriodo(DateTime inicioVigencia, Empresa empresa, Usuario professor, TipoServico servico) throws Exception;
+	
+	public List<Aula> buscarAulasParaOPeriodo(DateTime inicioPeriodo, DateTime fimPeriodo, Empresa empresa) throws Exception;
 }

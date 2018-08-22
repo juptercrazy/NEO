@@ -7,7 +7,7 @@ import entity.TipoServico;
 
 public interface TipoServicoDao {
 
-	public void criarServiço(TipoServico servico) throws Exception;
+	public void criarServico(TipoServico servico) throws Exception;
 	
 	public List<TipoServico> buscarTipoServicoPorEmpresa(Empresa empresa) throws Exception;
 	

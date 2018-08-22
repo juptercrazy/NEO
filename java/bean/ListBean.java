@@ -32,6 +32,8 @@ public class ListBean {
 	
 	private List<Usuario> professores = new ArrayList<Usuario>();
 	
+	
+	
 	public List<TipoServico> getTiposServicos() {
 		if (tiposServico.isEmpty()) {
 			carregarTipoServico();
@@ -76,7 +78,7 @@ public class ListBean {
 		}
 	}
 	
-	// TIPO DE USUÁRIO - ROLE
+	// TIPO DE USUï¿½RIO - ROLE
 	public List<Role> getTiposUsuario() {
 		carregarTipoUsuario();
 		return papeisUsuario;
@@ -148,5 +150,12 @@ public class ListBean {
 		}
 	}
 	
-	
+	public List<String> completeText(String query) {
+        List<String> results = new ArrayList<String>();
+        for(int i = 1; i < 6; i++) {
+            results.add(query + i);
+        }
+         
+        return results;
+    }
 }
